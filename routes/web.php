@@ -1,7 +1,7 @@
 <?php
 use App\Models\Post;
 use Illuminate\Support\Facades\Route;
-use Spatie\YamlFrontMatter\YamlFrontMatter;
+
 
 
 
@@ -23,9 +23,9 @@ return view('posts',[
 });
 
 
-Route::get('posts/{post}', function ($slug) {
+Route::get('posts/{post}', function ($id) {
 // encontrar una publicación por su slug y pasarla a una vista llamada "post"
   return view('post',[
-   'post'=> Post::findOrFail($slug)
+   'post'=> Post::findOrFail($id)
    ]);
 });
